@@ -27,8 +27,8 @@ def get_min_max_by_time(hour=None, minute=None):
         hour = time_bj.hour
     if minute is None:
         minute = time_bj.minute
-    # 优化：从下午12点到21点直线增长
-    time_rate = min((hour * 60 + minute - 12 * 60) / (21 * 60 - 12 * 60), 1)
+    # 优化：从下午12点到20点直线增长
+    time_rate = min((hour * 60 + minute - 12 * 60) / (20 * 60 - 12 * 60), 1)
     time_rate = max(time_rate,0)
     
     min_step = get_int_value_default(config, 'MIN_STEP', 15000)
